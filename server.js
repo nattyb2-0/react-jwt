@@ -11,7 +11,7 @@ const PORT = process.argv[2] || process.env.port || 3000;
 //our routes
 // authorization router to validate users
 const signUpRouter = require('./routes/signup');
-
+const loginRouter = require('./routes/login')
 
 
 
@@ -25,5 +25,7 @@ app.use(bodyParser.json());
 
 //use our routes
 app.use('/signup', signUpRouter);
+app.use('/login', loginRouter)
+
 
 app.listen(PORT, () => { console.log('Wanderlust 🌍')});
