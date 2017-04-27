@@ -1,0 +1,21 @@
+{
+  "name": "template_for_auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.4.0",
+    "morgan": "^1.8.1",
+    "path": "^0.12.7",
+    "pg-promise": "^5.6.7"
+  }
+}
