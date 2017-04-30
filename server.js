@@ -24,6 +24,7 @@ app.use(bodyParser.json());
 
 
 //use our routes
+app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/signup', signUpRouter);
 app.use('/login', loginRouter)
 
