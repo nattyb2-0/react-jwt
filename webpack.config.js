@@ -30,6 +30,10 @@ module.exports = {
     }),
     new ExtractTextPlugin('/css/[name].css', {
       allChunks: true
+    }),
+    new webpack.ProvidePlugin({
+      'window.jQuery': 'jquery',
+      'window.$': 'jquery',
     })
   ],
 
@@ -38,7 +42,7 @@ module.exports = {
     loaders: [
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
       },
       {
         test: /\.svg$/,

@@ -38,8 +38,11 @@ handleSignupPass(e){
 // sends the signup data to the api server
   // encrypts new user data and saves in db
   // authenticates the response and returns the user id
-  handleSignup() {
-    fetch('/signup', {
+  handleSignup(e) {
+    if(this.state.signupName === '' || this.state.signupPass=== ''){
+     e.preventDefault()
+    } else{
+      fetch('/signup', {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -69,6 +72,8 @@ handleSignupPass(e){
     }))
     .then(console.log('signup successful'))
     .catch(err => console.log(err));
+    }
+
   }
    // this authenticates the user on each page load
   // uses a token from local storage to verify access

@@ -1,5 +1,5 @@
 import React from 'react';
-// import './SignUp.css';
+import './SignUp.css';
 
 const SignUp = props => (
       <div className="login-box">
