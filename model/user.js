@@ -13,7 +13,6 @@ const { createToken } = require('../lib/token');
     psql.one(`INSERT INTO users ( username, password )
     VALUES ('${userObject.username}', '${userObject.password}') returning *;`)
     .then(result => {
-      console.log('this is result--->' +result.id);
       res.token = createToken(result);
       res.id = result.id;
       next();
