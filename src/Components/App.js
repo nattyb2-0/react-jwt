@@ -22,25 +22,11 @@ export default class App extends React.Component{
   }
 
 //handle change in state for signup form SigupName
-handleSignupName(e){
+handleChange(e){
+  console.log(e.target.name)
+  console.log(e.target.value)
   this.setState({
-    signupName: e.target.value,
-    signupPass: this.state.signupPass
-  })
-}
-
-handleSignupPass(e){
-  this.setState({
-    signupName: this.state.signupName,
-    signupPass: e.target.value
-  })
-}
-
-handleSignupEmail(e){
-  this.setState({
-    signupName: this.state.signupName,
-    signupEmail: e.target.value,
-    signupPass: this.state.signupPass
+    [e.target.name]: e.target.value
   })
 }
 
@@ -123,9 +109,9 @@ handleSignupEmail(e){
         signupName={this.state.signupName}
         signupPass={this.state.signupPass}
         signupEmail={this.state.email}
-        changeSignupName={this.handleSignupName.bind(this)}
-        changeSignupPass={this.handleSignupPass.bind(this)}
-        changeSignupEmail={this.handleSignupEmail.bind(this)}
+        handleChange={this.handleChange.bind(this)}
+        handleChange={this.handleChange.bind(this)}
+        handleChange={this.handleChange.bind(this)}
         submit={this.handleSignup.bind(this)}
         />
         <Login

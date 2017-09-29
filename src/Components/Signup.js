@@ -10,21 +10,21 @@ const SignUp = props => (
           value={props.signupName}
           name="signupName"
           placeholder="username"
-          onChange={props.changeSignupName}
+          onChange={props.handleChange}
         />
         <input
           type="text"
           value={props.signupPass}
           name="signupPass"
           placeholder="password"
-          onChange={props.changeSignupPass}
+          onChange={props.handleChange}
         />
         <input
         type="text"
         value={props.email}
         name="signupEmail"
         placeholder="ex. janedoe@gmail.com"
-        onChange={props.changeSignupEmail}
+        onChange={props.handleChange}
         />
         <button
           id="signup-button"
