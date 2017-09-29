@@ -1,6 +1,8 @@
 import React from 'react';
 import './SignUp.css';
 
+
+
 const SignUp = props => (
       <div className="login-box">
         <input
@@ -16,6 +18,13 @@ const SignUp = props => (
           name="signupPass"
           placeholder="password"
           onChange={props.changeSignupPass}
+        />
+        <input
+        type="text"
+        value={props.email}
+        name="signupEmail"
+        placeholder="ex. janedoe@gmail.com"
+        onChange={props.changeSignupEmail}
         />
         <button
           id="signup-button"

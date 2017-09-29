@@ -11,6 +11,7 @@ export default class App extends React.Component{
       loginPass: '',
       signupName: '',
       signupPass: '',
+      email:'',
       userID: 0,
     }
   }
@@ -32,6 +33,14 @@ handleSignupPass(e){
   this.setState({
     signupName: this.state.signupName,
     signupPass: e.target.value
+  })
+}
+
+handleSignupEmail(e){
+  this.setState({
+    signupName: this.state.signupName,
+    signupEmail: e.target.value,
+    signupPass: this.state.signupPass
   })
 }
 
@@ -61,7 +70,6 @@ handleSignupPass(e){
         })
         localStorage.id = response.id;
         localStorage.token = response.token;
-        console.log('this is local storage ---->' +localStorage.id);
       } else {
         alert(response.message);
       }
@@ -114,8 +122,10 @@ handleSignupPass(e){
         <Signup
         signupName={this.state.signupName}
         signupPass={this.state.signupPass}
+        signupEmail={this.state.email}
         changeSignupName={this.handleSignupName.bind(this)}
         changeSignupPass={this.handleSignupPass.bind(this)}
+        changeSignupEmail={this.handleSignupEmail.bind(this)}
         submit={this.handleSignup.bind(this)}
         />
         <Login

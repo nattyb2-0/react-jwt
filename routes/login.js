@@ -4,7 +4,7 @@ const { createToken } = require('../lib/token');
 
 // authenticates the login, and if true send a json token
 logInRouter.post('/', logIn, (req, res) => {
-  res.json({
+  res.status(200).json({
     token: res.token,
     id: res.id || 'invalid'
   });

@@ -8,10 +8,11 @@ const { createToken } = require('../lib/token');
     console.log(req.body);
     const userObject = {
       username: req.body.username,
+      email: req.body.email,
       password: bcrypt.hashSync(req.body.password, SALTROUNDS)
     };
-    psql.one(`INSERT INTO users ( username, password )
-    VALUES ('${userObject.username}', '${userObject.password}') returning *;`)
+    psql.one(`INSERT INTO users ( username,email, password )
+    VALUES ('${userObject.username}', '${userObject.email}','${userObject.password}') returning *;`)
     .then(result => {
       res.token = createToken(result);
       res.id = result.id;
